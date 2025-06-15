@@ -28,20 +28,20 @@ function generateNmbr (){
     
     if (amntNmbr === "" || toNmbr === "" || fromNmbr === ""){
         changeText("result", "meep... please, fill all the fields")
-        rikaImg.src = "/assets/rika5.webp";
+        rikaImg.src = "./assets/rika5.webp";
         return;
     }
 
 
     if (fromNmbr > toNmbr) {
         changeText("result",  "Meep... 'from number' cant be higher than 'to number'...");
-        rikaImg.src = "/assets/rika4.webp";
+        rikaImg.src = "./assets/rika4.webp";
         return;
     }
     
     if (amntNmbr > (toNmbr - fromNmbr + 1)) {
         changeText("result", "Impossible to generate that many unique numbers nanodesu!");
-        rikaImg.src = "/assets/rika3.webp";
+        rikaImg.src = "./assets/rika3.webp";
         return;
     }
 
@@ -56,7 +56,7 @@ function generateNmbr (){
     }
     
     rikaNipah.volume = 0.25;
-    rikaImg.src = "/assets/rika2.webp";
+    rikaImg.src = "./assets/rika2.webp";
     rikaNipah.play();
     changeText("result", `Generated numbers: "${generatedNmbrsArr}"`);
     changeBtnStatus();
