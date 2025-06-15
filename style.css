@@ -1,0 +1,127 @@
+@font-face {
+    font-family: sazanami-Gothic;
+    src: url(/assets/sazanami-gothic.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sazanami-Gothic;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+    max-width: 1100px;
+    border: 2px solid #933dee;
+    border-radius: 16px;
+    padding: 30px;
+    background: rgba(20, 0, 40, 0.7);
+}
+
+.container__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.container__info {
+    color: rgb(147, 61, 238);
+    flex: 1;
+}
+
+.container__text {
+    margin-bottom: 20px;
+}
+
+.container__text-blue {
+    color: #d599ff;
+    font-size: 24px;
+}
+
+.container__field {
+    margin-bottom: 15px;
+}
+
+
+input.container__input {
+    height: 35px;
+    width: 120px;
+    padding: 5px 10px;
+    border: 2px solid #933dee;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px transparent;
+}
+
+input.container__input:focus {
+    outline: none;
+    border-color: #d599ff;
+    box-shadow: 0 0 10px #933dee;
+}
+
+.container__buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.container__button,
+.container__button-disabled {
+    height: 40px;
+    min-width: 100px;
+    padding: 0 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.container__button {
+    background: linear-gradient(145deg, #933dee, #6c22a6);
+    color: white;
+    box-shadow: 0 4px 10px rgba(147, 61, 238, 0.5);
+}
+
+.container__button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(147, 61, 238, 0.7);
+}
+
+.container__button-disabled {
+    background-color: #333;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px dashed #933dee;
+    border-radius: 8px;
+    background-color: rgba(50, 0, 80, 0.3);
+    font-size: 20px;
+}
+
+.text__paragraph {
+    display: block;
+    margin-bottom: 5px;
+    color: #d599ff;
+}
