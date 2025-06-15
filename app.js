@@ -1,5 +1,4 @@
 let generatedNmbrsArr = [];
-const rikaImg = document.getElementById("rika_img");
 const rikaNipah = document.getElementById("nipah_audio");
 const rikaMeep1 = document.getElementById("meep1_audio");
 const rikaMeep2 = document.getElementById("meep2_audio");
@@ -13,6 +12,12 @@ function changeBtnStatus(){
     btnReset.removeAttribute("disabled");
     btnReset.classList.replace("container__button-disabled", "container__button");
 }
+
+function changeRikaImg(id, number) {
+  let img = document.getElementById(id);
+  img.src = `./assets/rika${number}.webp`;
+}
+
 
 function changeText (id, text){
     let type = document.getElementById(id);
@@ -28,20 +33,20 @@ function generateNmbr (){
     
     if (amntNmbr === "" || toNmbr === "" || fromNmbr === ""){
         changeText("result", "meep... please, fill all the fields")
-        rikaImg.src = "./assets/rika5.webp";
+        changeRikaImg("rika_img", 5)
         return;
     }
 
 
     if (fromNmbr > toNmbr) {
         changeText("result",  "Meep... 'from number' cant be higher than 'to number'...");
-        rikaImg.src = "./assets/rika4.webp";
+        changeRikaImg("rika_img", 4)
         return;
     }
     
     if (amntNmbr > (toNmbr - fromNmbr + 1)) {
         changeText("result", "Impossible to generate that many unique numbers nanodesu!");
-        rikaImg.src = "./assets/rika3.webp";
+        changeRikaImg("rika_img", 3)
         return;
     }
 
@@ -56,7 +61,7 @@ function generateNmbr (){
     }
     
     rikaNipah.volume = 0.25;
-    rikaImg.src = "./assets/rika2.webp";
+    changeRikaImg("rika_img", 2)
     rikaNipah.play();
     changeText("result", `Generated numbers: "${generatedNmbrsArr}"`);
     changeBtnStatus();
@@ -65,7 +70,7 @@ function generateNmbr (){
 function reset() {
     generatedNmbrsArr = [];
     changeText("result", "Waiting for the next number nanodesu~");
-    rikaImg.src = "/assets/rika3.webp";
+    changeRikaImg("rika_img", 3);
     document.getElementById("amount").value = '';
     document.getElementById("from").value = '';
     document.getElementById("to").value =  '';
